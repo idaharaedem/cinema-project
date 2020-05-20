@@ -19,6 +19,7 @@ sm_wrapper: document.querySelector('.sm-wrapper'),
 btn_search: document.querySelector('.search__btn'),
 search_Input: document.querySelector('.search_field'),
 searchForm: document.querySelector('.search'),
+searchContainer: document.querySelector('.search-container'),
 
 
 }
@@ -52,5 +53,6 @@ export const wordLimit = (title, limit = 15) => {
     return title;
 
 }
+
 
 

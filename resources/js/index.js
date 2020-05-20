@@ -3,7 +3,7 @@ import NowPlaying from './models/Now-Playing';
 import Upcoming from './models/Upcoming';
 import Trending from './models/Trending';
 import TopRated from './models/TopRated';
-import Search from './models/Search';
+
 //import {movieSelected} from './models/MovieSelected';
 import * as carouselView from './views/carouselView';
 import * as nowplayingView from './views/now-playingView';
@@ -19,28 +19,19 @@ import {elements,renderloader} from './views/base';
 /* Global state of the app */
 const state = {};
 
-
-
 elements.searchForm.addEventListener('submit', event => {
     event.preventDefault();
+
+    const query = searchView.searchItem();
+
+    if(query) {
+        
+        localStorage.setItem('search', query);
+        window.location = 'search';
+    }
     
-    SearchController();
 });
 
-const SearchController = async() => {
-     
-    const query = searchView.searchItem();
-    console.log(query)
-
-    state.search = new Search(query);
-    
-    await state.search.getSearch();
-
-
-
-}
-
-    
 
 
 const  CarouselController = async () => {
@@ -207,7 +198,7 @@ window.addEventListener('load', ()=> {
 const movieSelected = () => {
     const id = window.location.hash.replace('#', '');
     sessionStorage.setItem('movieId', id);
-    window.location = 'movie.html';
+    window.location = 'movie';
     return false;
     
 }

@@ -13,7 +13,8 @@ export default class Search  {
     
         try {
         const {data:{results}} = await axios(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${this.query}&page=1&include_adult=false`);
-        console.log(results);
+        this.results = results
+        console.log(this.results);
         }
         catch (error) {
             console.log(error)
