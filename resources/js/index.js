@@ -3,12 +3,14 @@ import NowPlaying from './models/Now-Playing';
 import Upcoming from './models/Upcoming';
 import Trending from './models/Trending';
 import TopRated from './models/TopRated';
+import Search from './models/Search';
 //import {movieSelected} from './models/MovieSelected';
 import * as carouselView from './views/carouselView';
 import * as nowplayingView from './views/now-playingView';
 import * as upcomingView from './views/upcomingView';
 import * as trendingView from './views/trendingView';
 import * as topRatedView from './views/topRatedView';
+import * as searchView from './views/searchView';
 import {elements,renderloader} from './views/base';
 
 
@@ -16,6 +18,29 @@ import {elements,renderloader} from './views/base';
 
 /* Global state of the app */
 const state = {};
+
+
+
+elements.searchForm.addEventListener('submit', event => {
+    event.preventDefault();
+    
+    SearchController();
+});
+
+const SearchController = async() => {
+     
+    const query = searchView.searchItem();
+    console.log(query)
+
+    state.search = new Search(query);
+    
+    await state.search.getSearch();
+
+
+
+}
+
+    
 
 
 const  CarouselController = async () => {
@@ -148,6 +173,8 @@ const TopRatedController = async() => {
 
     //prepare data for Ui
     topRatedView.renderResults(state.topRated.topRated);
+
+   
 
     
 }

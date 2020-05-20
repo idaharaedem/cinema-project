@@ -6,16 +6,24 @@ export const clearResults = () => {
     elements.topRated_arrows.innerHTML = '';
 }
 
+
+
 const renderTopRated =  topRated => {
     const markup = `    
-        <div class="topRated-poster">
-            <a href='#${topRated.id}'><img src="http://image.tmdb.org/t/p/original/${topRated.poster_path}"></a>
+        <div  class="topRated-poster" onclick="clickPoster()" >
+            <a href=#${topRated.id}><img src="http://image.tmdb.org/t/p/original/${topRated.poster_path}"/></a>
             <div class="ns-rating"> ${topRated.vote_average} <i class="ion-ios-star-outline"></i> </div>
             <div class="ns-title"> ${wordLimit(topRated.title)} </div>
         </div>
     `;
 
+    function clickPoster() {
+        console.log('clicked')
+    }
+
     elements.topRated_wrapper.insertAdjacentHTML('beforeend', markup);
+
+   
 }
 
 const createButton = (page, type ) => `

@@ -16,6 +16,10 @@ ns_OnClick: document.querySelector('.click'),
 ms_backdrop: document.querySelector('.details-img'),
 ms_details: document.querySelector('.details-desc'),
 sm_wrapper: document.querySelector('.sm-wrapper'),
+btn_search: document.querySelector('.search__btn'),
+search_Input: document.querySelector('.search_field'),
+searchForm: document.querySelector('.search'),
+
 
 }
 
@@ -48,4 +52,5 @@ export const wordLimit = (title, limit = 15) => {
     return title;
 
 }
+
 

@@ -10,8 +10,6 @@ state.movieDetails = new MovieSelected();
 
 const MovieSelectedController = async() => {
     
-
-    
     //Get Data
     await state.movieDetails.selectedMovie();
     

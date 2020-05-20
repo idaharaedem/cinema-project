@@ -26,7 +26,7 @@ export const renderSelectedMovie = selected => {
             <img src="http://image.tmdb.org/t/p/original/${selected.poster_path}">
         </div>
         <div class="trailer">
-            <a href="https://www.youtube.com/watch?v=${selected.videos.results[0].key}"><i class="ion-play"></i></a>
+            <a href="https://www.youtube.com/watch?v=${selected.videos.results[0].key}" target="_blank"><i class="ion-play"></i></a>
         </div> 
     `;
 
