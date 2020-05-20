@@ -15,8 +15,9 @@ elements.searchForm.addEventListener('submit', event => {
      searchTitle = searchView.searchItem();
 
      searchView.clearResults();
-
+    
      SearchController();
+
 });
 
 const SearchController = async() => {
@@ -30,4 +31,15 @@ const SearchController = async() => {
 }
 
 SearchController();
+
+
+const movieSelected = () => {
+    const id = window.location.hash.replace('#', '');
+    sessionStorage.setItem('movieId', id);
+    window.location = 'movie';
+    return false;
+    
+}
+
+window.addEventListener('hashchange', movieSelected);
 

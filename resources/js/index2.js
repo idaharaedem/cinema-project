@@ -2,6 +2,7 @@ import MovieSelected from './models/MovieSelected';
 import {renderloader, elements} from './views/base';
 import * as movieSelectedView from './views/movieSelectedView';
 import * as similarmoviesView from './views/similar-moviesView';
+import * as searchView from './views/searchView';
 
 const state = {};
 
@@ -41,3 +42,16 @@ window.addEventListener('load', () => {
 
     loader.className += " hidden"
 })
+
+elements.searchForm.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const query = searchView.searchItem();
+
+    if(query) {
+        
+        localStorage.setItem('search', query);
+        window.location = 'search';
+    }
+    
+});

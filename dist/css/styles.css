@@ -974,7 +974,7 @@ footer p {
    display: flex;
     border-radius: 5rem;
     align-items: center;
-    padding-left: 15%;
+    padding-left: 20%;
     transition: all .3s; }
     .search:focus-within {
       transform: translateY(-2px);
@@ -1035,3 +1035,57 @@ footer p {
     margin-top: 140px;
     padding-left: 55px;
 }
+
+.search-poster {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 22px;
+    margin-right: 22px;
+    margin-bottom: 22px;
+    padding: 0%;
+    transform: scale(1);
+    opacity: 0.8;
+}
+
+.search-poster:hover{
+    transform: scale(1.25);
+    transition: transform 0.5s, opacity 0.2s;
+    opacity: 1;
+}
+
+
+.search-poster img {
+    height: 240px;
+    width: 160px;
+    background-color: #000;
+    box-shadow: 0 5px 70px 5px rgba(0, 0, 0, 0.8);
+    
+}
+
+
+.search-rating {
+    color: #fff;
+    padding: 3px 3px;
+    background-color: #000;
+    font-size: 70%;
+    border-radius: 1%;
+    position: absolute;
+    top: 0px;
+   
+}
+
+.search-rating:hover {
+    transform: scale(1.25);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.search-title {
+    color: #fff;
+    text-align: center;
+    margin-top: 3px;
+    font-weight: 200;
+    position: relative;
+}
+
+
