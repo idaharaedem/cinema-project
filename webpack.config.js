@@ -24,7 +24,7 @@ module.exports = {
         }),
 
         new HtmlWebpackPlugin({
-            filename: 'index',
+            filename: 'index.html',
             template: './resources/index.html',
             excludeChunks: ['movie'],
             

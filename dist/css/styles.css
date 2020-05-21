@@ -16,13 +16,11 @@ body {
     font-size: 20px;
     font-weight: 300;
     text-rendering: optomizeLegibiliity;
-    background-color: #5c5c5c;
+    background-color: #4b4b4b;
 }
 
 nav {
     display: flex;
-    
-   
 }
 
 h3 {
