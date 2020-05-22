@@ -4,13 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js", 
-    "heroku-postbuild": "webpack -p",
+    "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
-   
-    
-
+    "start": "webpack-dev-server --mode development --open",
+    "heroku-postbuild": "cd dist && npm install && npm run build"
   },
   "author": "Idahara Edem",
   "license": "ISC",
